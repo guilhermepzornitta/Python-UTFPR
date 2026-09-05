@@ -66,6 +66,15 @@ def alterar_pessoa(nomes, idades, emails):
     else:
         print("Nao encontrado")
 
+def listar_pessoas(nomes, idades, emails):
+    pos = 0
+    if len(nomes) == 0:
+        print("Nenhuma pessoa cadastrada")
+        
+    while pos < len(nomes):
+        exibir_pessoa(nomes, idades, emails, pos)
+        pos += 1
+
 nomes = []
 idades = []
 emails = []
@@ -87,16 +96,12 @@ while op != 5:
         alterar_pessoa(nomes, idades, emails)
 
     elif op == 4:
-        pos = 0
-        while pos < len(nomes):
-            print("Nome: " + nomes[pos])
-            print("Idade: " + str(idades[pos]))
-            print("E-mail: " + emails[pos])
-            pos += 1
+        listar_pessoas(nomes, idades, emails)
+
     elif op == 5:
         print("Saindo...")
- 
+
     else:
         print("Opcao invalida")
- 
+
 print("Fim do programa")
