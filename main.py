@@ -53,6 +53,19 @@ def consultar_pessoa(nomes, idades, emails):
     else:
         print("Nao encontrado")
 
+def alterar_pessoa(nomes, idades, emails):
+    b = input("Nome para alterar: ")
+    buscar = buscar_pessoa(nomes, b)
+    if buscar != -1:
+        print("Dados atuais:")
+        exibir_pessoa(nomes, idades, emails, buscar)
+        nomes[buscar] = input("Novo nome: ")
+        idades[buscar] = int(input("Nova idade: "))
+        emails[buscar] = input("Novo e-mail: ")
+        print("Alterado!")
+    else:
+        print("Nao encontrado")
+
 nomes = []
 idades = []
 emails = []
@@ -71,23 +84,8 @@ while op != 5:
         consultar_pessoa(nomes, idades, emails)
 
     elif op == 3:
-        b = input("Nome para alterar: ")
-        achou = 0
-        qtd = 0
-        while qtd < len(nomes) and achou == 0:
-            if b == nomes[qtd]:
-                achou = 1
-                print("Dados atuais:")
-                print("Nome: " + nomes[qtd])
-                print("Idade: " + str(idades[qtd]))
-                print("E-mail: " + emails[qtd])
-                nomes[qtd] = input("Novo nome: ")
-                idades[qtd] = int(input("Nova idade: "))
-                emails[qtd] = input("Novo e-mail: ")
-                print("Alterado!")
+        alterar_pessoa(nomes, idades, emails)
 
-        if achou == 0:
-            print("Nao encontrado") 
     elif op == 4:
         pos = 0
         while pos < len(nomes):
