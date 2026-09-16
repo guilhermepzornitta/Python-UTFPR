@@ -1,6 +1,6 @@
 # Sistema de Cadastro de Pessoas - versao 2
 # novos requisitos: menu, consulta, alteracao e listagem
- 
+
 def exibir_menu():
     print("=========================")
     print(" CADASTRO DE PESSOAS")
@@ -27,7 +27,7 @@ def cadastrar_pessoa(nomes, idades, emails):
     if i >= 18:
         print("Situacao: Maior de idade")
     else:
-        print("Situacao: Menor de idade") 
+        print("Situacao: Menor de idade")
 
 def exibir_pessoa(nomes, idades, emails, pos):
     print("Nome: " + nomes[pos])
@@ -71,7 +71,7 @@ def listar_pessoas(nomes, idades, emails):
     pos = 0
     if len(nomes) == 0:
         print("Nenhuma pessoa cadastrada")
-        
+
     while pos < len(nomes):
         exibir_pessoa(nomes, idades, emails, pos)
         pos += 1
@@ -87,7 +87,6 @@ def classificar_faixa_etaria(idade):
         return "Adulto"
     else:
         return "Idoso"
-
 
 def analisar_email(email):
     if email == "":
@@ -144,30 +143,30 @@ def analisar_pessoa(nomes, idades, emails):
 nomes = []
 idades = []
 emails = []
- 
-qtd = 0
-op = 0
- 
-while op != 6:
 
-    op = exibir_menu()
+quantidade = 0
+opcao = 0
 
-    if op == 1:
+while opcao != 6:
+
+    opcao = exibir_menu()
+
+    if opcao == 1:
         cadastrar_pessoa(nomes, idades, emails)
 
-    elif op == 2:
+    elif opcao == 2:
         consultar_pessoa(nomes, idades, emails)
 
-    elif op == 3:
+    elif opcao == 3:
         alterar_pessoa(nomes, idades, emails)
 
-    elif op == 4:
+    elif opcao == 4:
         listar_pessoas(nomes, idades, emails)
 
-    elif op == 5:
+    elif opcao == 5:
         analisar_pessoa(nomes, idades, emails)
 
-    elif op == 6:
+    elif opcao == 6:
         print("Saindo...")
 
     else:
