@@ -13,10 +13,6 @@ clear-cache-post-run=no
 # all available extensions.
 #enable-all-extensions=
 
-
-init-hook='import sys; sys.path.append("./src")'
-
-
 # In error mode, messages with a category besides ERROR or FATAL are
 # suppressed, and no reports are done by default. Error mode is compatible with
 # disabling specific errors.
@@ -29,7 +25,7 @@ init-hook='import sys; sys.path.append("./src")'
 # A comma-separated list of package or module names from where C extensions may
 # be loaded. Extensions are loading into the active Python interpreter and may
 # run arbitrary code.
-extension-pkg-allow-list=selenium
+extension-pkg-allow-list=
 
 # A comma-separated list of package or module names from where C extensions may
 # be loaded. Extensions are loading into the active Python interpreter and may
